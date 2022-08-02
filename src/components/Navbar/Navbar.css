@@ -1,0 +1,117 @@
+nav {
+  display: flex;
+  padding: 1em;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: black;/*#282c34  #00ffa9  #19132e  #121212  #190e38 #121212*/
+  font-weight: 600;
+}
+
+.nav__projectName {
+  color: #e4f9ff;
+  text-decoration: none;
+}
+
+.authLink {
+  color: #f0f1fa;/*#61dafb  #16193c SignUp & Log In #f0f1fa*/
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  font-family:'Georama', sans-serif;
+  padding: 20px;
+}
+
+.authLink + .authLink {
+  padding: 1em;
+}
+
+.authLink:hover {
+  color: #ffffff;
+}
+
+.nav-logoutbtn {
+  font-family: inherit;
+  font-weight: inherit;
+  padding: 0.5em 1em;
+  margin-left: 1em;
+  background-color: #5595ff;
+  box-shadow: 0 0 5px 0 aliceblue;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  color: #e3f2ff;
+  transition: all 0.2s ease-in-out;
+  position: sticky;
+  top: 0;
+}
+
+.nav-logoutbtn:hover {
+  transform: scale(1.05);
+  background-color: #d13e3e;
+}
+
+@font-face {
+  font-family: 'RightGrotesk-WideMedium';
+  src: url(/public/fonts/RightGrotesk-WideMedium.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.title1{
+ 
+  font-family: 'RightGrotesk-WideMedium';
+  color: #16193c;
+  font-size: 8em;
+  font-weight: 400;
+  margin:10px;
+  padding-top:10px;
+}
+.title2{
+  font-family: 'RightGrotesk-WideMedium';
+  color: #05e736;
+  font-weight: 400;
+  padding-top:10px;
+}
+.title3{
+  font-family: 'RightGrotesk-WideMedium';
+  color: #16193c;
+  font-size: 2em;
+  margin:10px;
+  padding-top:10px;
+}
+.title4{
+  font-family: 'RightGrotesk-WideMedium';
+  color: #05e736;
+  font-size: 3em;
+  font-weight: 800;
+  margin:20px;
+  padding-top:10px;
+}
+.background{   
+  margin:1px;
+  padding-top: 1px;
+  /*width:"100wh";*/
+  /*height:"100vh";*/
+  background-image: url('../../../public/sec2.jpeg');
+  background-size: cover;
+  background-repeat: 'no-repeat';
+  
+  
+  max-width:100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.background .overlay {
+  background-color: rgba(255,255,255, 0.01);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.background #ihlogo{
+  margin-top: 70px;
+  margin-left: 250px;
+  width: 200px;
+  height: 200px;
+}
