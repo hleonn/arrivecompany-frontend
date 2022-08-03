@@ -15,6 +15,7 @@ import {
     Center
 } from '@chakra-ui/react'
 import { SunIcon, TimeIcon, Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/icons'
+import QRCode from "react-qr-code";
 
 
 const InfoCustomers = () => {
@@ -39,7 +40,7 @@ const InfoCustomers = () => {
         console.log("enviarDatos")
     };
 
-    
+
 
 
     const toggleSave = (event) => {
@@ -61,9 +62,11 @@ const InfoCustomers = () => {
 
         fetch("http://localhost:5005/api/customers", requestOptions)
             .then(response => response.json())
-            .then(result => console.log(result))
+            .then(result => navigate(`/access/${result._id}`))
             .catch(error => console.log('error', error));
     }
+
+
 
     const toggleCancel = () => {
         console.log("Toggle cancel")
@@ -182,6 +185,9 @@ const InfoCustomers = () => {
                     </Center>
                 </div>
                 <Divider orientation='horizontal' p={5} />
+
+                {/*<QRCode value={customerName} />*/}
+
                 {/*4 Button variants */}
                 <div>
                     <Center height='50px' pt={10} pb={10}>

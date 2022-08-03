@@ -77,7 +77,7 @@ export default function App() {
           <Route path="/InfoServices" element={<LayoutAdmin><InfoServices /></LayoutAdmin>} />
           <Route path="/InfoTransport" element={<LayoutAdmin><InfoTransport /></LayoutAdmin>} />
           <Route path="/Security" element={<LayoutAdmin><InfoSecurity /></LayoutAdmin>} />
-          <Route path="/Access" element={<LayoutAdmin><Access /></LayoutAdmin>} />
+          <Route path="/Access/:id" element={<LayoutAdmin><Access /></LayoutAdmin>} />
         </Routes>
       
     </Layout>
