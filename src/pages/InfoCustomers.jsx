@@ -12,7 +12,8 @@ import {
     InputGroup,
     InputRightElement,
     Divider,
-    Center
+    Center,
+    Flex
 } from '@chakra-ui/react'
 import { SunIcon, TimeIcon, Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/icons'
 import QRCode from "react-qr-code";
@@ -73,37 +74,38 @@ const InfoCustomers = () => {
         setCancel(!cancel)
     }
 
-    // console.log("GET DATOS Enviar los siguientes datos:", datosEnviar);
-    // fetch("https://localhost", {
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //     },
-    //     method: "POST",
-    //     body: JSON.stringify(datosEnviar),
-    // })
-    //     .then((respuesta) => respuesta.json())
-    //     .then((datos) => console.log(datos))
-    //     .catch(console.log);
+
 
 
     return (
-        //0 TITLE
+        //0 TITLE 
         <>
             <div>
-                <Box m={[10, 10]} borderRadius='full' px='2' borderWidth={4} borderColor='red.500' p={5} className='my-box'>
-                    <Heading size='xl'>
-                        Arrive-
+                <Center height='50px' pt={10} pb={10}>
                     <Box
-                            as='span'
-                            color='black.500'//before red.500
-                            sx={{
-                                '.my-box:hover &': {
-                                    color: '#05e736',//before green.500
-                                },
-                            }}>Customers
+                        w='500px' //COOL
+                        align='center'
+                        direction='row' spacing={2} align='center'
+                        borderRadius='15px'
+
+                        borderWidth={4}
+                        borderColor='#05e736'
+                        p={2}
+                        className='my-box'>
+                        <Heading size='xl'>
+                            Arrive-
+                    <Box
+                        as='span'
+                        color='black.500'//before red.500
+                        sx={{
+                        '.my-box:hover &': {
+                        color: '#05e736',//before green.500
+                        },
+                        }}>Customers
                     </Box>
-                    </Heading>
-                </Box>
+                        </Heading>
+                    </Box>
+                </Center>
             </div>
             <Divider orientation='horizontal' />
 
@@ -186,7 +188,7 @@ const InfoCustomers = () => {
                 </div>
                 <Divider orientation='horizontal' p={5} />
 
-                {/*<QRCode value={customerName} />*/}
+
 
                 {/*4 Button variants */}
                 <div>

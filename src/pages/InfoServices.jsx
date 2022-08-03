@@ -11,7 +11,8 @@ import {
     InputGroup,
     InputRightElement,
     Divider,
-    Center
+    Center,
+    Flex
 } from '@chakra-ui/react'
 import { SunIcon, TimeIcon, CheckIcon } from '@chakra-ui/icons'
 
@@ -22,105 +23,119 @@ import { SunIcon, TimeIcon, CheckIcon } from '@chakra-ui/icons'
 //indicale a App.js que lo vas a usar, llevate este codigo 
 //import InfoCustomers from '../components/App'
 
-const InfoServices= () =>{
+const InfoServices = () => {
     return (
-        //1 Title
+        //1 Title & Styles
         <>
-        <div>
-            <Box m={[10,10]} borderRadius='full' px='2' borderWidth={4} borderColor='blue.500' p={5} className='my-box'>
-                <Heading size='xl'>
-                    Arrive-
-                    <Box 
-                    as='span'  
-                    color='black.500'//before red.500
-                    sx={{'.my-box:hover &': {
-                    color: '#05e736',//before green.500
+            <div>
+                <Center height='50px' pt={10} pb={10}>
+
+                    <Box
+                        w='500px' //COOL
+                        align='center'
+                        direction='row' spacing={2} align='center'
+                        borderRadius='15px'
+                        borderWidth={4}
+                        borderColor='#05e736'
+                        p={2}
+                        className='my-box'>
+                        <Heading size='xl'>
+                            Arrive-
+                    <Box
+                        as='span'
+                        color='black.500'//before red.500
+                        sx={{
+                        '.my-box:hover &': {
+                        color: '#05e736',//before green.500
                         },
                         }}>Services
                     </Box>
-                </Heading>
-            </Box>
-        </div>
-        {/*2 Data Users */}
-        <div>
-            <form>
-            <Stack m={[10,10]} >
-                <InputGroup>
-                    <InputLeftElement 
-                    pointerEvents='none'
-                    fontSize='1em'
-                    children={<SunIcon w={8} h={8} color='blue.500'
-                     />}
-                    />
-                    <Input type='tel' placeholder=' Customer Name' fontSize='2em' pt={5} pb={5} pl={10} />
-                </InputGroup>
+                        </Heading>
+                    </Box>
+                </Center>
+            </div>
 
-                
-            </Stack>
-            </form>    
-        </div>
-        
-        {/*3 Date and Time Picker */}
-        <div>
-            <Input 
-            placeHolder="Select Date and Time"
-            size="md"
-            type="datetime-local"
-            />
-        </div>
+            {/*2 Data Users */}
+            
+            <div>
+                <form>
+                    <Stack m={[10, 10]} >
+                        <InputGroup>
+                            <InputLeftElement
+                                pointerEvents='none'
+                                fontSize='1em'
+                                children={<SunIcon w={8} h={8} color='blue.500'
+                                />}
+                            />
+                            <Input type='tel' placeholder=' Customer Name' fontSize='2em' pt={5} pb={5} pl={10} />
+                        </InputGroup>
 
-        {/*4 DropDown/Select */}
-        
-        <div>
-        <Center height='50px'>
-        <Select placeholder='Choose your supplier company'>
-                <option value='option1'>Uber Eats</option>
-                <option value='option2'>Domino's</option>
-                <option value='option3'>Hello Fresh</option>
-                <option value='option4'>Pizza hut</option>
-                
-            </Select>
-        
-            <Divider orientation='vertical' pl={2} pr={2} />
-        
-            <Select placeholder='Area to Visit'>
-                <option value='option1'>Computing Services</option>
-                <option value='option2'>Design</option>
-                <option value='option3'>Exports</option>
-                <option value='option4'>Maintenance</option>
-                <option value='option5'>Marketing</option>
-                <option value='option6'>Planning</option>
-                <option value='option7'>Production</option>
-                <option value='option8'>Reception</option>
-                <option value='option9'>Human Resources</option>
-                <option value='option10'>Sales</option>
-            </Select>
-            </Center>
-        </div>
 
-        {/*5 Button variants */}
-        <div>
-            <Center height='50px' pt={10} pb={10}>
-            <Stack direction='row' spacing={4} align='center'>
-                <Button rounded={'full'} colorScheme='teal' variant='solid'>
-                    Save 👍
+                    </Stack>
+                </form>
+            </div>
+
+            {/*3 Date and Time Picker */}
+            <div>
+                <Input
+                    placeHolder="Select Date and Time"
+                    size="md"
+                    type="datetime-local"
+                />
+            </div>
+
+            {/*4 DropDown/Select */}
+
+            <div>
+                <Center height='50px'>
+                    <Select placeholder='Choose your supplier company'>
+                        <option value='option1'>Uber Eats</option>
+                        <option value='option2'>Domino's</option>
+                        <option value='option3'>Hello Fresh</option>
+                        <option value='option4'>Pizza hut</option>
+
+                    </Select>
+
+                    <Divider orientation='vertical' pl={2} pr={2} />
+
+                    <Select placeholder='Area to Visit'>
+                        <option value='option1'>Computing Services</option>
+                        <option value='option2'>Design</option>
+                        <option value='option3'>Exports</option>
+                        <option value='option4'>Maintenance</option>
+                        <option value='option5'>Marketing</option>
+                        <option value='option6'>Planning</option>
+                        <option value='option7'>Production</option>
+                        <option value='option8'>Reception</option>
+                        <option value='option9'>Human Resources</option>
+                        <option value='option10'>Sales</option>
+                    </Select>
+                </Center>
+            </div>
+
+            {/*5 Button variants */}
+            <div>
+                <Center height='50px' pt={10} pb={10}>
+                    <Stack direction='row' spacing={4} align='center'>
+                        <Button rounded={'full'} colorScheme='teal' variant='solid'>
+                            Save 👍
                 </Button>
-                <Divider orientation='vertical' />
-                <Button rounded={'full'} colorScheme='teal' variant='outline'>
-                    Cancel 👎
+                        <Divider orientation='vertical' />
+                        <Button rounded={'full'} colorScheme='teal' variant='outline'>
+                            Cancel 👎
                 </Button>
-                
-            </Stack>
-            </Center>
-        </div>
+
+                    </Stack>
+                </Center>
+            </div>
 
 
-        {/*6 Carrousel */}
-        
+            {/*6 Carrousel */}
+
         </>
     );
 
-}  
+}
 
 
 // function InfoCustomers()
@@ -131,7 +146,7 @@ const InfoServices= () =>{
 //             <img src={url} className="principal" alt =""></img>
 //             <form>
 //                 <button>
-    
+
 //                 </button>
 //             </form>
 //         </div>

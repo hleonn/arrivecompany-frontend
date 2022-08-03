@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
     Stack,
+    Text,
     Box,
     Input,
     Select,
@@ -134,12 +135,27 @@ const Access = ({ }) => {
                     <Button rounded={'full'} colorScheme='teal' variant='ghost'>
                         Authorized Time
                 </Button>
+                    
+                    <div>
+                        <Heading>Arrive-Access</Heading>
+                            <Text color={'gray.500'} fontSize={'lg'}>
+                            Welcome! ✌️
+                            </Text>
+                            <br></br>
                     <QRCode
                         id="QRCode"
                         value={customer != null ? JSON.stringify(customer) : ''}
                     />
+                        <h2>
+                            Hello
+                        </h2>
+                        <p>
+                            Bon Jour
+                        </p>
+                    </div>
+
                     <Button rounded={'full'} colorScheme='teal' variant='ghost' onClick={download}>
-                        download
+                        Download Register
                 </Button>
                 </Stack>
             </div>
