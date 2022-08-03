@@ -139,7 +139,7 @@ const InfoCustomers = () => {
                             <Input
                                 onChange={(e) => setCustomerName(e.target.value)}
                                 value={customerName}
-                                type="text" placeholder=' Customer Name' fontSize='2em' pt={5} pb={5} pl={10}
+                                type="text" placeholder='Customer Name' fontSize='1em' pt={5} pb={5} pl={10}
                             />
                         </InputGroup>
 
@@ -173,12 +173,24 @@ const InfoCustomers = () => {
                     </Stack>
                 </Center>
                 </div>
-                <Divider orientation='horizontal' p={5} />
+                <Divider orientation='horizontal' p={0.5} />
 
                 {/*******3 DropDown/Select *******/}
 
                 <div>
-                    <Center height='50px'>
+                
+                    <Center height='50px' pt={10} pb={10}>
+                    <Stack 
+                        w='500px' //COOL
+                        background='white'
+                        align='center'
+                        direction='row' spacing={2} align='center'
+                        borderRadius='15px'
+                        borderWidth={4}
+                        borderColor='black'
+                        p={2}
+                        className='my-box'
+                        >
                         <Select
                             onChange={(e) => setcompanyVisit(e.target.value)}
                             value={companyVisit}
@@ -192,7 +204,7 @@ const InfoCustomers = () => {
                             <option value='Theranos'>Theranos</option>
 
                         </Select>
-                        <Divider orientation='vertical' pl={2} pr={2} />
+                        <Divider orientation='vertical' pl={1} pr={1} />
                         {/*<Divider orientation='horizontal' p={5}/>*/}
 
                         <Select
@@ -207,10 +219,11 @@ const InfoCustomers = () => {
                             <option value='Marketing'>Marketing</option>
                             <option value='Planning'>Planning</option>
                             <option value='Production'>Production</option>
-                            <option value='Reception'>Reception</option>
+                            <option value='Reception'>Financial Services</option>
                             <option value='Human Resources'>Human Resources</option>
                             <option value='Sales'>Sales</option>
                         </Select>
+                    </Stack>    
                     </Center>
                 </div>
                 <Divider orientation='horizontal' p={5} />

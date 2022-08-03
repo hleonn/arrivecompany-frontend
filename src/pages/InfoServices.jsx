@@ -119,8 +119,20 @@ const InfoServices = () => {
             {/*4 DropDown/Select */}
 
             <div>
-                <Center height='50px'>
-                    <Select placeholder='Choose your supplier company'>
+            
+                <Center height='50px' pt={10} pb={10}>
+                <Stack 
+                        w='500px' //COOL
+                        background='white'
+                        align='center'
+                        direction='row' spacing={2} align='center'
+                        borderRadius='15px'
+                        borderWidth={4}
+                        borderColor='black'
+                        p={2}
+                        className='my-box'
+                        >
+                    <Select placeholder='Choose supplier'>
                         <option value='option1'>Uber Eats</option>
                         <option value='option2'>Domino's</option>
                         <option value='option3'>Hello Fresh</option>
@@ -138,10 +150,11 @@ const InfoServices = () => {
                         <option value='option5'>Marketing</option>
                         <option value='option6'>Planning</option>
                         <option value='option7'>Production</option>
-                        <option value='option8'>Reception</option>
+                        <option value='option8'>Financial Services</option>
                         <option value='option9'>Human Resources</option>
                         <option value='option10'>Sales</option>
                     </Select>
+                </Stack>
                 </Center>
             </div>
 
