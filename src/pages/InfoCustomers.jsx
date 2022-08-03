@@ -17,6 +17,8 @@ import {
 } from '@chakra-ui/react'
 import { SunIcon, TimeIcon, Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/icons'
 import QRCode from "react-qr-code";
+import {AiOutlineUser} from 'react-icons/ai'
+
 
 
 const InfoCustomers = () => {
@@ -119,7 +121,7 @@ const InfoCustomers = () => {
                                 pointerEvents='none'
                                 fontSize='2em'
                                 children={
-                                    <SunIcon w={8} h={8} color='red.500' />
+                                    <AiOutlineUser w={8} h={8} color='red.500' />
                                 }
 
                             />

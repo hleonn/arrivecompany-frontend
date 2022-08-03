@@ -15,7 +15,7 @@ import {
     Flex
 } from '@chakra-ui/react'
 import { SunIcon, TimeIcon, CheckIcon } from '@chakra-ui/icons'
-
+import {AiOutlineUser} from 'react-icons/ai'
 
 //importa los elementos que necesites de chakra
 //import { Input } from '@chakra-ui/react'
@@ -56,15 +56,15 @@ const InfoServices = () => {
             </div>
 
             {/*2 Data Users */}
-            
+
             <div>
                 <form>
                     <Stack m={[10, 10]} >
                         <InputGroup>
                             <InputLeftElement
                                 pointerEvents='none'
-                                fontSize='1em'
-                                children={<SunIcon w={8} h={8} color='blue.500'
+                                fontSize='2em'
+                                children={<AiOutlineUser w={8} h={8} color='blue.500'
                                 />}
                             />
                             <Input type='tel' placeholder=' Customer Name' fontSize='2em' pt={5} pb={5} pl={10} />
