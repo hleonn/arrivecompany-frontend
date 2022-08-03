@@ -83,19 +83,19 @@ const InfoCustomers = () => {
         //0 TITLE 
         <>
             <div>
-                <Center height='50px' pt={10} pb={10}>
+                <Center height='50px' pt={10} pb={10} >
                     <Box
                         w='500px' //COOL
                         align='center'
                         direction='row' spacing={2} align='center'
                         borderRadius='15px'
-
+                        background='white'
                         borderWidth={4}
                         borderColor='#05e736'
                         p={2}
                         className='my-box'>
-                        <Heading size='xl'>
-                            Arrive-
+
+                        <Heading size='xl'>Arrive-
                     <Box
                         as='span'
                         color='black.500'//before red.500
@@ -112,10 +112,22 @@ const InfoCustomers = () => {
             <Divider orientation='horizontal' />
 
             {/******* 1 DATA USER ******/}
+            
             <form onSubmit={enviarDatos}>
                 <div>
+                    <Center height='50px' pt={10} pb={10}>
                     {/*<form onSubmit={enviarDatos}>*/}
-                    <Stack m={[10, 10]} >
+                        <Stack 
+                            w='500px' //COOL
+                            background='white'
+                            align='center'
+                            direction='row' spacing={2} align='center'
+                            borderRadius='15px'
+                            borderWidth={4}
+                            borderColor='black'
+                            p={2}
+                            className='my-box'
+                        >
                         <InputGroup>
                             <InputLeftElement
                                 pointerEvents='none'
@@ -123,9 +135,7 @@ const InfoCustomers = () => {
                                 children={
                                     <AiOutlineUser w={8} h={8} color='red.500' />
                                 }
-
                             />
-
                             <Input
                                 onChange={(e) => setCustomerName(e.target.value)}
                                 value={customerName}
@@ -133,13 +143,26 @@ const InfoCustomers = () => {
                             />
                         </InputGroup>
 
-                    </Stack>
-                    {/*</form>*/}
+                        </Stack>
+                        {/*</form>*/}
+                    </Center>
                 </div>
 
                 {/*******2 DATE AND TIME*******/}
 
                 <div>
+                <Center height='50px' pt={10} pb={10}>
+                    <Stack 
+                        w='500px' //COOL
+                        background='white'
+                        align='center'
+                        direction='row' spacing={2} align='center'
+                        borderRadius='15px'
+                        borderWidth={4}
+                        borderColor='black'
+                        p={2}
+                        className='my-box'
+                        >
                     <Input
                         onChange={(e) => setDateTime(e.target.value)}
                         value={DateTime}
@@ -147,6 +170,8 @@ const InfoCustomers = () => {
                         size="md"
                         type="datetime-local" //Number
                     />
+                    </Stack>
+                </Center>
                 </div>
                 <Divider orientation='horizontal' p={5} />
 

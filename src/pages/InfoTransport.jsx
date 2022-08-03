@@ -23,6 +23,10 @@ import {AiOutlineUser} from 'react-icons/ai'
 //import InfoCustomers from '../components/App'
 
 const InfoTransport = () => {
+    const [customerName, setCustomerName] = useState('');
+    const [DateTime, setDateTime] = useState('');
+    const actualizarCustomer = (e) => { setCustomerName(e.target.value); };
+    const actualizarDate = (e) => { setDateTime(e.target.value); };
     return (
         //1 Title
         <>
@@ -34,6 +38,7 @@ const InfoTransport = () => {
                         align='center'
                         direction='row' spacing={2} align='center'
                         borderRadius='15px'
+                        background='white'
                         borderWidth={4}
                         borderColor='#05e736'
                         p={2}
@@ -57,8 +62,18 @@ const InfoTransport = () => {
             {/*2 Data Users */}
 
             <div>
+            <Center height='50px' pt={10} pb={10}>
                 <form>
-                    <Stack m={[10, 10]} >
+                    <Stack 
+                        w='500px' //COOL
+                        background='white'
+                        align='center'
+                        direction='row' spacing={2} align='center'
+                        borderRadius='15px'
+                        borderWidth={4}
+                        borderColor='black'
+                        p={2}
+                        className='my-box' >
                         <InputGroup>
                             <InputLeftElement
                                 pointerEvents='none'
@@ -72,16 +87,33 @@ const InfoTransport = () => {
 
                     </Stack>
                 </form>
+            </Center>
             </div>
 
             {/*3 Date and Time Picker */}
             <div>
-                <Input
-                    placeHolder="Select Date and Time"
-                    size="md"
-                    type="datetime-local"
-                />
-            </div>
+                <Center height='50px' pt={10} pb={10}>
+                    <Stack 
+                        w='500px' //COOL
+                        background='white'
+                        align='center'
+                        direction='row' spacing={2} align='center'
+                        borderRadius='15px'
+                        borderWidth={4}
+                        borderColor='black'
+                        p={2}
+                        className='my-box'
+                        >
+                    <Input
+                        onChange={(e) => setDateTime(e.target.value)}
+                        value={DateTime}
+                        placeholder="Select Date and Time"
+                        size="md"
+                        type="datetime-local" //Number
+                    />
+                    </Stack>
+                </Center>
+                </div>
 
             {/*4 DropDown/Select */}
             <div>
