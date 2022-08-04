@@ -14,7 +14,7 @@ import {
     Flex
 } from '@chakra-ui/react'
 import { SunIcon, TimeIcon, CheckIcon } from '@chakra-ui/icons'
-import {AiOutlineUser} from 'react-icons/ai'
+import {AiOutlineUser, AiTwotoneCar} from 'react-icons/ai'
 
 //importa los elementos que necesites de chakra
 //import { Input } from '@chakra-ui/react'
@@ -81,10 +81,11 @@ const InfoTransport = () => {
                                 children={<AiOutlineUser w={8} h={8} color='yellow.500'
                                 />}
                             />
-                            <Input type='tel' placeholder=' Customer Name' fontSize='2em' pt={5} pb={5} pl={10} />
+                            <Input type='tel' placeholder=' Customer Name' fontSize='1em' pt={5} pb={5} pl={10} />
                         </InputGroup>
-
-
+                        
+                        
+                                />}
                     </Stack>
                 </form>
             </Center>
@@ -158,8 +159,9 @@ const InfoTransport = () => {
                             <InputLeftElement
                                 pointerEvents='none'
                                 fontSize='1em'
-                                children={<SunIcon color='black.500'
+                                children={<AiTwotoneCar w={8} h={8} color='black.500'
                                 />}
+                                
                             />
                             <Input type='tel' placeholder=' Plates' fontSize='2em' p={10} />
                         </InputGroup>

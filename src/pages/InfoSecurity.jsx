@@ -79,7 +79,7 @@ const InfoSecurity= () =>{
                     children={<AiOutlineUser w={8} h={8} color='red.500'
                      />}
                     />
-                    <Input type='tel' placeholder=' Customer Name' fontSize='2em' pt={5} pb={5} pl={10} />
+                    <Input type='tel' placeholder=' Customer Name' fontSize='1em' pt={5} pb={5} pl={10} />
                 </InputGroup>
 
 

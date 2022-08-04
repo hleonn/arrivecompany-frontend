@@ -166,7 +166,7 @@ const InfoCustomers = () => {
                     <Input
                         onChange={(e) => setDateTime(e.target.value)}
                         value={DateTime}
-                        placeholder="Select Date and Time"
+                        placeholder="Choose Date & Time"
                         size="md"
                         type="datetime-local" //Number
                     />
@@ -195,7 +195,7 @@ const InfoCustomers = () => {
                             onChange={(e) => setcompanyVisit(e.target.value)}
                             value={companyVisit}
                             type="text"
-                            placeholder='Select Company to Visit'>
+                            placeholder='Company to Visit'>
                             <option value='Umbrella corp'>Umbrella corp</option>
                             <option value='Monsanto'>Monsanto </option>
                             <option value='Bayer'>Bayer </option>

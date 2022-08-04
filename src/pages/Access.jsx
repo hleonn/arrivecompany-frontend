@@ -11,7 +11,8 @@ import {
     InputLeftElement,
     InputGroup,
     InputRightElement,
-    Center
+    Center,
+    Divider
 } from '@chakra-ui/react'
 import { SunIcon, TimeIcon, CheckIcon } from '@chakra-ui/icons'
 import { useParams } from 'react-router-dom';
@@ -64,8 +65,8 @@ const Access = ({ }) => {
         //1 Title
         <>
             <div>
-                    <Center height='50px' pt={10} pb={10}>
-                    <Box 
+                <Center height='50px' pt={10} pb={10}>
+                    <Box
 
                         w='500px' //COOL
                         align='center'
@@ -94,62 +95,89 @@ const Access = ({ }) => {
             </div>
 
             {/*2 Data Users */}
-            <div>
-                
-            </div>
-
             
-            {/*4 DropDown/Select */}
-            
-            {/*5 Button variants */}
-            <div>
+            <div style={{padding:"50px", height:"50vh", display:"flex", alignItems:"center", justifyContent:"center", width:"100%"}}>
                 <Stack direction='row' spacing={4} align='center'>
-                    <Button rounded={'full'} colorScheme='teal' variant='solid'>
-                        Print Free Access
-                </Button>
-                    <Button rounded={'full'} colorScheme='teal' variant='outline'>
-                        Denie Access
-                </Button>
-                    <Button rounded={'full'} colorScheme='teal' variant='ghost'>
-                        Authorized Time
-                </Button>
 
                     <div>
-                        <Heading>Arrive-Access</Heading>
-                        <Text color={'gray.500'} fontSize={'lg'}>
-                            Welcome! ✌️
-                            </Text>
-                        <br></br>
+                    <Center style={{display:"flex",flexDirection:"column", alignItems:"center"}} >
+                    {/*Here*/}
+                    <Box
+                            w='500px' //COOL
+                            align='center'
+                            direction='row' spacing={2} align='center'
+                            borderRadius='15px'
+                            background='white'
+                            borderWidth={4}
+                            borderColor='black'
+                            p={25}
+                            mb={15}
+                            className='my-box'>
+                            
+                            <Box
+                                    as='span'
+                                    color='black.500'//before red.500
+                                    background='white'
+                                    sx={{
+                                        '.my-box:hover &': {
+                                            color: '#05e736',//before green.500
+                                        },
+                                    }}>
+                                    <Text color={'black'} fontSize={'xl'}>
+                                    Arrive-Access
+                                    </Text>
+                                    
+                                    <Text color={'gray.500'} fontSize={'lg'}>
+                                    Welcome! ✌️
+                                    </Text>
+                                    <br></br> 
+                            </Box>
+                            <div style={{display:"flex", alignItems:"center"}}>
+                                <QRCode
+                                id="QRCode"
+                                value={customer != null ? JSON.stringify(customer) : ''}
+                                />
+                                <div>
+                                    <p>{customer?.CustomerName}</p>
+                                    <p>{customer?.DateTime}</p>
+                                    <p>{customer?.CompanyVisit}</p>
+                                    <p>{customer?.Area}</p>
+                                </div>
+                            </div>
+                            </Box>
+
+                        <div>
+                        <Button rounded={'full'} colorScheme='teal' variant='solid' onClick={download}>
+                            Download Register
+                        </Button>
+
+                        <Button rounded={'full'} colorScheme='teal' variant='outline'>
+                            Denie Access
+                        </Button>
+                        <Button rounded={'full'} colorScheme='teal' variant='ghost'>
+                            Authorized Time
+                        </Button>
+                        </div>
+                    </Center>
+
+                        {/*<p>{JSON.stringify(customer)}</p>*/}
                         
-                        <QRCode
-                            id="QRCode"
-                            value={customer != null ? JSON.stringify(customer) : ''}
-                        />
                         
-                        <h2>
-                            Hello
-                        </h2>
-                        <p>
-                            Bon Jour
-                        </p>
-                        <p>{JSON.stringify(customer)}</p>
-                        <br></br>
+
+
                     </div>
 
-                    <Button rounded={'full'} colorScheme='teal' variant='ghost' onClick={download}>
-                        Download Register
-                </Button>
+                    {/*<Button rounded={'full'} colorScheme='teal' variant='ghost' onClick={download}>
+                        Download Register </Button>*/}
+
                 </Stack>
             </div>
-
-
             {/*6 Carrousel */}
 
         </>
     );
 
 }
-
 
 // function InfoCustomers()
 // {   const [url,setUrl] = useState("");

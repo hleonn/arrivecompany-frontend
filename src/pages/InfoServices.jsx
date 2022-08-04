@@ -82,7 +82,7 @@ const InfoServices = () => {
                                 children={<AiOutlineUser w={8} h={8} color='blue.500'
                                 />}
                             />
-                            <Input type='tel' placeholder=' Customer Name' fontSize='2em' pt={5} pb={5} pl={10} />
+                            <Input type='tel' placeholder=' Customer Name' fontSize='1em' pt={5} pb={5} pl={10} />
                         </InputGroup>
 
 
@@ -133,22 +133,22 @@ const InfoServices = () => {
                         className='my-box'
                         >
                     <Select placeholder='Choose supplier'>
-                        <option value='option1'>Uber Eats</option>
-                        <option value='option2'>Domino's</option>
-                        <option value='option3'>Hello Fresh</option>
-                        <option value='option4'>Pizza hut</option>
+                        <option value='Uber Eats'>Uber Eats</option>
+                        <option value='Dominos'>Domino's</option>
+                        <option value='Hello Fresh'>Hello Fresh</option>
+                        <option value='Pizza Hut'>Pizza Hut</option>
 
                     </Select>
 
                     <Divider orientation='vertical' pl={2} pr={2} />
 
                     <Select placeholder='Area to Visit'>
-                        <option value='option1'>Computing Services</option>
-                        <option value='option2'>Design</option>
-                        <option value='option3'>Exports</option>
-                        <option value='option4'>Maintenance</option>
-                        <option value='option5'>Marketing</option>
-                        <option value='option6'>Planning</option>
+                        <option value='Computing Services'>Computing Services</option>
+                        <option value='Design'>Design</option>
+                        <option value='Exports'>Exports</option>
+                        <option value='Maintenance'>Maintenance</option>
+                        <option value='Marketing'>Marketing</option>
+                        <option value='Planning'>Planning</option>
                         <option value='option7'>Production</option>
                         <option value='option8'>Financial Services</option>
                         <option value='option9'>Human Resources</option>

@@ -134,14 +134,14 @@ export default function Signup({ authenticate }) {
                   colorScheme="whatsapp"
                   width="full"
                   >
-                  Signup
+                  SIGN UP
                 </Button> {/* Change button */}
                 </Stack>
               </form>
               <Box>
                   New to us?{" "}
                   <Link color='teal.900' href="#"> {/*'teal.500'*/}
-                    Sign Up
+                    Signup
                   </Link>
                 </Box>
             </div>
