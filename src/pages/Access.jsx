@@ -52,7 +52,7 @@ const Access = ({ }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:5005/api/customers/${id}`)
+        fetch(`${process.env.REACT_APP_SERVER_URL}/customers/${id}`)
             .then(response => response.json())
             .then(result => {
                 setCustomer(result)
@@ -76,7 +76,7 @@ const Access = ({ }) => {
             method: 'DELETE',
         };
 
-        fetch(`http://localhost:5005/api/customers/${id}`, requestOptions)
+        fetch(`${process.env.REACT_APP_SERVER_URL}/customers/${id}`, requestOptions)
             .then(response => response.json())
             .then(() => navigate('/customers'))
             .catch(error => console.log('error', error));

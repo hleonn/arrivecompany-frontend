@@ -58,7 +58,7 @@ const InfoTransport = () => {
             body: JSON.stringify(datosEnviar),
         };
 
-        fetch("http://localhost:5005/api/transport", requestOptions)
+        fetch("${process.env.REACT_APP_SERVER_URL}/transport", requestOptions)
             .then(response => response.json())
             .then(result => navigate(`/access/${result._id}`))
             .catch(error => console.log('error', error));
@@ -181,7 +181,7 @@ const InfoTransport = () => {
                             <option value='Uber Eats'>Uber Eats</option>
                             <option value='Dominos'>Domino's</option>
                             <option value='Hello Fresh'>Hello Fresh</option>
-                            <option value='Pizza hut'>Pizza hut</option>
+                            <option value='Pizza hut'>Pizza hut</option>git add
 
                         </Select>
 

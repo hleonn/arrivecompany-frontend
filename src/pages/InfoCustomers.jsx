@@ -62,7 +62,7 @@ const InfoCustomers = () => {
             body: JSON.stringify(datosEnviar),
         };
 
-        fetch("http://localhost:5005/api/customers", requestOptions)
+        fetch("${process.env.REACT_APP_SERVER_URL}/customers", requestOptions)
             .then(response => response.json())
             .then(result => navigate(`/access/${result._id}`))
             .catch(error => console.log('error', error));
