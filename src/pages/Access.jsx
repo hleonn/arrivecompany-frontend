@@ -49,7 +49,7 @@ const Access = ({ }) => {
     const [customer, setCustomer] = useState(null);
     // const actualizarCustomer = (e) => { setCustomerName(e.target.value); };
     const { id } = useParams();
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(`http://localhost:5005/api/customers/${id}`)
@@ -61,7 +61,27 @@ const Access = ({ }) => {
 
     }, [])
 
+    //*Here we go! *//
+    const deleteCustomer = (event) => {
+        event.preventDefault();
+        // const datosBorrar = {
+        //     CustomerName: customerName,
+        //     DateTime: DateTime,
+        //     CompanyVisit: companyVisit,
+        //     Area: area,
+        // };
+        // console.log(datosBorrar)
 
+        var requestOptions = {
+            method: 'DELETE',
+        };
+
+        fetch(`http://localhost:5005/api/customers/${id}`, requestOptions)
+            .then(response => response.json())
+            .then(() => navigate('/customers'))
+            .catch(error => console.log('error', error));
+    }
+    //*Here we go! *//
     return (
         //1 Title
         <>
@@ -172,7 +192,7 @@ const Access = ({ }) => {
                                 <Button ml={5} mr={5} rounded={'full'} colorScheme='whatsapp' variant='solid'>
                                     Deny 
                                 </Button>
-                                <Button ml={5} mr={5} rounded={'full'} colorScheme='whatsapp' variant='solid' >
+                                <Button ml={5} mr={5} rounded={'full'} colorScheme='whatsapp' variant='solid' onClick={deleteCustomer}>
                                     Delete
                                 </Button>
                             </div>
