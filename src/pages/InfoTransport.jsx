@@ -58,7 +58,7 @@ const InfoTransport = () => {
             body: JSON.stringify(datosEnviar),
         };
 
-        fetch("${process.env.REACT_APP_SERVER_URL}/transport", requestOptions)
+        fetch(`${process.env.REACT_APP_SERVER_URL}/transport`, requestOptions)
             .then(response => response.json())
             .then(result => navigate(`/access/${result._id}`))
             .catch(error => console.log('error', error));
