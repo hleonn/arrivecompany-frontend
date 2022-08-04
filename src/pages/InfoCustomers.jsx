@@ -208,7 +208,7 @@ const InfoCustomers = () => {
                             placeholder='Area to Visit'>
                             <option value='Informatics'>Informatics</option>
                             <option value='Design'>Design</option>
-                            <option value='Exports'>Exports</option>
+                            <option value='Test and Laboratory'>Test and Laboratory</option>
                             <option value='Maintenance'>Maintenance</option>
                             <option value='Marketing'>Marketing</option>
                             <option value='Planning'>Planning</option>

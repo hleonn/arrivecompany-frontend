@@ -11,7 +11,8 @@ import {
     InputGroup,
     InputRightElement,
     Center,
-    Flex
+    Flex,
+    Divider    
 } from '@chakra-ui/react'
 import { SunIcon, TimeIcon, CheckIcon } from '@chakra-ui/icons'
 import {AiOutlineUser, AiFillCar} from 'react-icons/ai'
@@ -118,27 +119,42 @@ const InfoTransport = () => {
 
             {/*4 DropDown/Select */}
             <div>
-                <Select placeholder='Choose supplier company'>
-                    <option value='option1'>Uber Eats</option>
-                    <option value='option2'>Domino's</option>
-                    <option value='option3'>Hello Fresh</option>
-                    <option value='option4'>Pizza hut</option>
+                <Center height='50px' pt={10} pb={10}>
+                <Stack
+                        w='500px' //COOL
+                        background='white'
+                        align='center'
+                        direction='row' spacing={2} align='center'
+                        borderRadius='15px'
+                        borderWidth={4}
+                        borderColor='black'
+                        p={2}
+                        className='my-box'
+                        > 
+                    <Select placeholder='Choose supplier'>
+                        <option value='option1'>Uber Eats</option>
+                        <option value='option2'>Domino's</option>
+                        <option value='option3'>Hello Fresh</option>
+                        <option value='option4'>Pizza hut</option>
+                    
+                    </Select>
+            
+            <Divider orientation='vertical' pl={1} pr={1} />
 
-                </Select>
-            </div>
-            <div>
-                <Select placeholder='Area to Visit'>
-                    <option value='option1'>Computing Services</option>
-                    <option value='option2'>Design</option>
-                    <option value='option3'>Exports</option>
-                    <option value='option4'>Maintenance</option>
-                    <option value='option5'>Marketing</option>
-                    <option value='option6'>Planning</option>
-                    <option value='option7'>Production</option>
-                    <option value='option8'>Reception</option>
-                    <option value='option9'>Human Resources</option>
-                    <option value='option10'>Sales</option>
-                </Select>
+                    <Select placeholder='Area to Visit'>
+                                <option value='Informatics'>Informatics</option>
+                                <option value='Design'>Design</option>
+                                <option value='Test and Laboratory'>Test and Laboratory</option>
+                                <option value='Maintenance'>Maintenance</option>
+                                <option value='Marketing'>Marketing</option>
+                                <option value='Planning'>Planning</option>
+                                <option value='Production'>Production</option>
+                                <option value='Financial Services'>Financial Services</option>
+                                <option value='Human Capital'>Human Capital</option>
+                                <option value='Sales'>Sales</option>
+                    </Select>
+                </Stack>
+                </Center>
             </div>
 
 
