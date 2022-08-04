@@ -14,7 +14,7 @@ import {
     Flex
 } from '@chakra-ui/react'
 import { SunIcon, TimeIcon, CheckIcon } from '@chakra-ui/icons'
-import {AiOutlineUser, AiTwotoneCar} from 'react-icons/ai'
+import {AiOutlineUser, AiFillCar} from 'react-icons/ai'
 
 //importa los elementos que necesites de chakra
 //import { Input } from '@chakra-ui/react'
@@ -118,7 +118,7 @@ const InfoTransport = () => {
 
             {/*4 DropDown/Select */}
             <div>
-                <Select placeholder='Choose your supplier company'>
+                <Select placeholder='Choose supplier company'>
                     <option value='option1'>Uber Eats</option>
                     <option value='option2'>Domino's</option>
                     <option value='option3'>Hello Fresh</option>
@@ -159,7 +159,7 @@ const InfoTransport = () => {
                             <InputLeftElement
                                 pointerEvents='none'
                                 fontSize='1em'
-                                children={<AiTwotoneCar w={8} h={8} color='black.500'
+                                children={<AiFillCar w={8} h={8} color='black.500'
                                 />}
                                 
                             />

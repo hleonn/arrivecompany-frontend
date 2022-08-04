@@ -17,6 +17,7 @@ import {
 import { SunIcon, TimeIcon, CheckIcon } from '@chakra-ui/icons'
 import { useParams } from 'react-router-dom';
 import QRCode from "react-qr-code";
+import moment from 'moment';
 
 //importa los elementos que necesites de chakra
 //import { Input } from '@chakra-ui/react'
@@ -95,26 +96,26 @@ const Access = ({ }) => {
             </div>
 
             {/*2 Data Users */}
-            
-            <div style={{padding:"50px", height:"50vh", display:"flex", alignItems:"center", justifyContent:"center", width:"100%"}}>
+
+            <div style={{ padding: "50px", height: "50vh", display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
                 <Stack direction='row' spacing={4} align='center'>
 
                     <div>
-                    <Center style={{display:"flex",flexDirection:"column", alignItems:"center"}} >
-                    {/*Here*/}
-                    <Box
-                            w='500px' //COOL
-                            align='center'
-                            direction='row' spacing={2} align='center'
-                            borderRadius='15px'
-                            background='white'
-                            borderWidth={4}
-                            borderColor='black'
-                            p={25}
-                            mb={15}
-                            className='my-box'>
-                            
+                        <Center style={{ display: "flex", flexDirection: "column", alignItems: "center" }} >
+                            {/*Here*/}
                             <Box
+                                w='500px' //COOL
+                                align='center'
+                                direction='row' spacing={2} align='center'
+                                borderRadius='15px'
+                                background='white'
+                                borderWidth={4}
+                                borderColor='black'
+                                p={25}
+                                mb={15}
+                                className='my-box'>
+
+                                <Box
                                     as='span'
                                     color='black.500'//before red.500
                                     background='white'
@@ -123,46 +124,63 @@ const Access = ({ }) => {
                                             color: '#05e736',//before green.500
                                         },
                                     }}>
-                                    <Text color={'black'} fontSize={'xl'}>
-                                    Arrive-Access
+                                    <Text color={'black'} fontSize='28px' fontWeight='bold'>
+                                        VISITANT ✌️
                                     </Text>
-                                    
-                                    <Text color={'gray.500'} fontSize={'lg'}>
-                                    Welcome! ✌️
-                                    </Text>
-                                    <br></br> 
-                            </Box>
-                            <div style={{display:"flex", alignItems:"center"}}>
-                                <QRCode
-                                id="QRCode"
-                                value={customer != null ? JSON.stringify(customer) : ''}
-                                />
-                                <div>
-                                    <p>{customer?.CustomerName}</p>
-                                    <p>{customer?.DateTime}</p>
-                                    <p>{customer?.CompanyVisit}</p>
-                                    <p>{customer?.Area}</p>
+
+                                    <br></br>
+                                </Box>
+                                <div style={{ display: "flex", alignItems: "center" }}>
+                                    <QRCode
+                                        id="QRCode"
+                                        value={customer != null ? JSON.stringify(customer) : ''}
+                                    />
+                                    {customer ? (
+                                        //style:margin-left
+                                        <div >
+                                            <Text color={'black'} fontSize='22px' fontWeight='bold'>
+                                                <p>{customer.CustomerName || null}</p>
+                                            </Text>
+
+                                            <Text color={'black'} fontSize='20px' fontWeight='bold'>
+                                                <p>{customer.CompanyVisit || null}</p>
+                                            </Text>
+
+                                            <Text color={'black'} fontSize='20px' fontWeight='bold'>
+                                                <p>{customer.Area || null}</p>
+                                            </Text>
+
+                                            <Text color={'red.500'} fontSize='28px' fontWeight='bold'>
+                                                <p>{moment(customer.DateTime).format("D-M-YY ") || null}</p>
+
+                                            </Text>
+                                            <Text color={'red'} fontSize='28px' fontWeight='bold'>
+                                                <p>{moment(customer.DateTime).format("HH:mm a ") || null}</p>
+                                            </Text>
+                                        </div>
+                                        //D/M/YY
+                                    ) : null}
                                 </div>
-                            </div>
                             </Box>
 
-                        <div>
-                        <Button rounded={'full'} colorScheme='teal' variant='solid' onClick={download}>
-                            Download Register
-                        </Button>
-
-                        <Button rounded={'full'} colorScheme='teal' variant='outline'>
-                            Denie Access
-                        </Button>
-                        <Button rounded={'full'} colorScheme='teal' variant='ghost'>
-                            Authorized Time
-                        </Button>
-                        </div>
-                    </Center>
+                            <div>
+                                
+                                <Button ml={5} mr={5} rounded={'full'} colorScheme='teal' variant='solid' onClick={download}>
+                                    Download
+                                </Button>
+                                
+                                <Button ml={5} mr={5} rounded={'full'} colorScheme='whatsapp' variant='solid'>
+                                    Deny 
+                                </Button>
+                                <Button ml={5} mr={5} rounded={'full'} colorScheme='whatsapp' variant='solid' >
+                                    Delete
+                                </Button>
+                            </div>
+                        </Center>
 
                         {/*<p>{JSON.stringify(customer)}</p>*/}
-                        
-                        
+
+
 
 
                     </div>

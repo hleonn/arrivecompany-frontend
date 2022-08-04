@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import * as PATHS from "../utils/paths";
+//import ReactDOM from 'react-dom'
+//import moment from 'moment'
 import {
     Stack,
     Box,
@@ -43,9 +45,6 @@ const InfoCustomers = () => {
         console.log("enviarDatos")
     };
 
-
-
-
     const toggleSave = (event) => {
         event.preventDefault();
         const datosEnviar = {
@@ -69,15 +68,10 @@ const InfoCustomers = () => {
             .catch(error => console.log('error', error));
     }
 
-
-
     const toggleCancel = () => {
         console.log("Toggle cancel")
         setCancel(!cancel)
     }
-
-
-
 
     return (
         //0 TITLE 
@@ -196,10 +190,10 @@ const InfoCustomers = () => {
                             value={companyVisit}
                             type="text"
                             placeholder='Company to Visit'>
-                            <option value='Umbrella corp'>Umbrella corp</option>
+                            <option value='Umbrella'>Umbrella</option>
                             <option value='Monsanto'>Monsanto </option>
                             <option value='Bayer'>Bayer </option>
-                            <option value='Illumina corp'>Illumina corp</option>
+                            <option value='Illumina'>Illumina</option>
                             <option value='Astra Zeneca'>Astra Zeneca</option>
                             <option value='Theranos'>Theranos</option>
 
@@ -212,15 +206,15 @@ const InfoCustomers = () => {
                             value={area}
                             type="text"
                             placeholder='Area to Visit'>
-                            <option value='Computing Services'>Computing Services</option>
+                            <option value='Informatics'>Informatics</option>
                             <option value='Design'>Design</option>
                             <option value='Exports'>Exports</option>
                             <option value='Maintenance'>Maintenance</option>
                             <option value='Marketing'>Marketing</option>
                             <option value='Planning'>Planning</option>
                             <option value='Production'>Production</option>
-                            <option value='Reception'>Financial Services</option>
-                            <option value='Human Resources'>Human Resources</option>
+                            <option value='Financial Services'>Financial Services</option>
+                            <option value='Human Capital'>Human Capital</option>
                             <option value='Sales'>Sales</option>
                         </Select>
                     </Stack>    
