@@ -331,7 +331,7 @@ const InfoCustomers = () => {
                                                 <option value='Scooter'>Scooter</option>
                                                 <option value='Van'>Van</option>
                                                 <option value='Truck'>Truck</option>
-                                                <option value='Armored Truck Transport'>Armored Truck Transport</option>
+                                                <option value='Armored Truck'>Armored Truck</option>
                                             </Select>
 
                                             <Divider orientation='vertical' pl={1} pr={1} />

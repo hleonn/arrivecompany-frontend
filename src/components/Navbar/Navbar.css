@@ -73,8 +73,9 @@ nav {
 }
 .title3{
   font-family: 'RightGrotesk-WideMedium';
-  color: #16193c;
-  font-size: 2em;
+  color: #ebebf0;
+  font-size: 3.5em;
+  font-weight: 'bold';
   margin:10px;
   padding-top:10px;
 }

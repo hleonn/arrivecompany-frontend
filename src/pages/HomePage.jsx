@@ -17,7 +17,7 @@ function HomePage({ handleLogout, user, }) {
           Arrive-
           <span className="title2">Company</span>
         </p>
-        <p className="title3">Arrive register online for companies
+        <p className="title3">Arrive & Tracking by QR's
         </p>
         <p className="title4">Welcome!
         </p>
