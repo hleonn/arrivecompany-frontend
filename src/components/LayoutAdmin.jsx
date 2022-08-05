@@ -54,8 +54,8 @@ export default function LayoutAdmin({ children }) {
 
 const LinkItems = [
     { name: 'Customers', path: '/customers', icon: FiHome },
-    { name: 'Critical Services', path: '/InfoServices', icon: FiTrendingUp },
-    { name: 'Transport', path: '/InfoTransport', icon: FiCompass },
+    { name: 'Other Services', path: '/InfoServices', icon: FiTrendingUp },
+    { name: 'Registers', path: '/InfoTransport', icon: FiCompass },
     // { name: 'Security', path: '/Security', icon: FiStar },
     { name: 'Access', path: '/Access', icon: FiSettings },
 ];
@@ -63,14 +63,14 @@ const LinkItems = [
 const SidebarContent = ({ onClose, ...rest }) => {
     return (
         <Box
-            bg={useColorModeValue('white', 'gray.900')}
+            bg={useColorModeValue('white', 'gray.800')}
             borderRight="1px"
             borderRightColor={useColorModeValue('gray.200', 'gray.700')}
             w={{ base: 'full', md: 60 }}
             pos="fixed"
             h="full"
             {...rest}>
-            <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
+            <Flex h="20" alignItems="center" mx="4" justifyContent="space-between">
                 <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
                     Arrive-Company
         </Text>

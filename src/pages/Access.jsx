@@ -145,7 +145,7 @@ const Access = ({ }) => {
                                         },
                                     }}>
                                     <Text color={'black'} fontSize='28px' fontWeight='bold'>
-                                        VISITANT ✌️
+                                        VISITOR ✌️
                                     </Text>
 
                                     <br></br>

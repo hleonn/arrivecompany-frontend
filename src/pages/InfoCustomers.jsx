@@ -119,54 +119,9 @@ const InfoCustomers = () => {
                 </Center>
             </div>
             <Divider orientation='horizontal' />
-            {/******* 1 CHANGES WITH TABS ......PERSONAL OR SERVICES ******/}
-            {/* <div>
-                <Center height='50px' pt={10} pb={10}>
-                    <Stack
-                        w='500px' //COOL
-                        background='white'
-                        align='center'
-                        direction='row' spacing={2} align='center'
-                        borderRadius='15px'
-                        borderWidth={4}
-                        borderColor='black'
-                        p={2}
-                        className='my-box'
-                    >
-                        <Tabs defaultIndex={1}>
-
-                            <TabList>
-                                <Tab>Personal or Work</Tab>
-                                <Tab>Services</Tab>
-                            </TabList>
-
-                            <TabPanels>
-                                <TabPanel>
-                                    <Image
-                                        boxSize='200px'
-                                        fit='cover'
-                                        src='https://resizing.flixster.com/wTgvsiM8vNLhCcCH-6ovV8n5z5U=/300x300/v1.bjsyMDkxMzI5O2o7MTgyMDQ7MTIwMDsxMjAwOzkwMA'
-                                    />
-                                </TabPanel>
-                                <TabPanel>
-                                    <Image
-                                        boxSize='200px'
-                                        fit='cover'
-                                        src='https://vignette.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png/revision/latest?cb=20170716092103'
-                                    />
-                                </TabPanel>
-                            </TabPanels>
-
-
-                        </Tabs>
-                    </Stack>
-                </Center>
-            </div> */}
+            {/* <div>       </div> */}
 
             {/******* 1 CHANGES WITH TABS ......PERSONAL OR SERVICES ******/}
-
-
-
 
             {/******* 2 DATA USER ******/}
 
@@ -222,6 +177,7 @@ const InfoCustomers = () => {
                                 p={2}
                                 className='my-box'
                             >
+                            <label >Schedule </label>
                                 <Input
                                     onChange={(e) => setDateTime(e.target.value)}
                                     value={DateTime}
@@ -254,7 +210,7 @@ const InfoCustomers = () => {
                                     onChange={(e) => setcompanyVisit(e.target.value)}
                                     value={companyVisit}
                                     type="text"
-                                    placeholder='Company to Visit'>
+                                    placeholder='Company Name'>
                                     <option value='Umbrella'>Umbrella</option>
                                     <option value='Monsanto'>Monsanto </option>
                                     <option value='Bayer'>Bayer </option>
@@ -270,7 +226,7 @@ const InfoCustomers = () => {
                                     onChange={(e) => setArea(e.target.value)}
                                     value={area}
                                     type="text"
-                                    placeholder='Area to Visit'>
+                                    placeholder='Company Area'>
                                     <option value='Informatics'>Informatics</option>
                                     <option value='Genoma Design'>Genoma Design</option>
                                     <option value='Clonation'>Clonation</option>
@@ -287,11 +243,12 @@ const InfoCustomers = () => {
                     </div>
 
                     <Tabs defaultIndex={1}>
+                    <Center pt={2} pb={2}>
                         <TabList>
-                            <Tab>Personal or Work</Tab>
-                            <Tab>Services</Tab>
+                            <Tab fontSize='1.5em' fontWeight= 'bold'>Personal</Tab>
+                            <Tab fontSize='1.5em' fontWeight= 'bold'>Services</Tab>
                         </TabList>
-
+                    </Center>
                         <TabPanels>
                             <TabPanel>
                                 {/*  */}
@@ -307,7 +264,7 @@ const InfoCustomers = () => {
                                             direction='row' spacing={2} align='center'
                                             borderRadius='15px'
                                             borderWidth={4}
-                                            borderColor='black'
+                                            borderColor='#25D366'
                                             p={2}
                                             className='my-box'
                                         >
@@ -315,16 +272,20 @@ const InfoCustomers = () => {
                                                 onChange={(e) => setSupply(e.target.value)}
                                                 value={supply}
                                                 type="text"
-                                                placeholder='Choose supplier'>
+                                                placeholder='Choose Service Provider'>
+                                                <option value='Amazon Services'>Amazon Services</option>
+                                                <option value='DHL Services'>DHL Services</option>
+                                                <option value='UPS'>UPS</option>
+                                                <option value='FedEx'>FedEx</option>
                                                 <option value='Uber Eats'>Uber Eats</option>
                                                 <option value='Dominos'>Domino's</option>
                                                 <option value='Hello Fresh'>Hello Fresh</option>
-                                                <option value='Pizza hut'>Pizza hut</option>git add
+                                                <option value='Pizza hut'>Pizza hut</option>
                     
-                        </Select>
+                                            </Select>
 
                                             <Divider orientation='vertical' pl={1} pr={1} />
-
+{/*}
                                             <Select
                                                 onChange={(e) => setArea(e.target.value)}
                                                 value={area}
@@ -341,6 +302,7 @@ const InfoCustomers = () => {
                                                 <option value='Human Capital'>Human Capital</option>
                                                 <option value='Sales'>Sales</option>
                                             </Select>
+*/}
                                         </Stack>
                                     </Center>
                                 </div>
@@ -355,7 +317,7 @@ const InfoCustomers = () => {
                                             direction='row' spacing={2} align='center'
                                             borderRadius='15px'
                                             borderWidth={4}
-                                            borderColor='black'
+                                            borderColor='#25D366'
                                             p={2}
                                             className='my-box'
                                         >
@@ -365,10 +327,11 @@ const InfoCustomers = () => {
                                                 type="text"
                                                 placeholder='Vehicle Type'>
                                                 <option value='Vehicle'>Vehicle</option>
-                                                <option value='Truck'>Truck</option>
-                                                <option value='Van'>Van</option>
                                                 <option value='Motorcycle'>Motorcycle</option>
                                                 <option value='Scooter'>Scooter</option>
+                                                <option value='Van'>Van</option>
+                                                <option value='Truck'>Truck</option>
+                                                <option value='Armored Truck Transport'>Armored Truck Transport</option>
                                             </Select>
 
                                             <Divider orientation='vertical' pl={1} pr={1} />
@@ -404,25 +367,23 @@ const InfoCustomers = () => {
                             </TabPanel>
                         </TabPanels>
 
-
                     </Tabs>
-
 
                     <Divider orientation='horizontal' p={5} />
 
                     {/*5 Button variants */}
                     <div>
-                        <Center height='50px' pt={10} pb={10}>
+                        <Center pt={5} pb={5}>
                             <Stack direction='row' spacing={4} align='center'>
 
-                                <Button rounded={'full'} colorScheme='teal' variant='solid' onClick={toggleSave}>
+                                <Button rounded={'full'} colorScheme='whatsapp' variant='solid' onClick={toggleSave}>
                                     Save 👍
-                </Button>
+                                </Button>
 
                                 <Divider orientation='vertical' />
                                 <Button rounded={'full'} colorScheme='teal' variant='outline' onClick={toggleCancel}>
                                     Cancel 👎
-                </Button>
+                                </Button>
 
                             </Stack>
                         </Center>

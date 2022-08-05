@@ -45,7 +45,7 @@ const InfoServices = () => {
                         p={2}
                         className='my-box'>
                         <Heading size='xl'>
-                            Arrive-
+                            Other
                     <Box
                         as='span'
                         color='black.500'//before red.500
@@ -53,7 +53,7 @@ const InfoServices = () => {
                         '.my-box:hover &': {
                         color: '#05e736',//before green.500
                         },
-                        }}>Critical Services
+                        }}>Services
                     </Box>
                         </Heading>
                     </Box>

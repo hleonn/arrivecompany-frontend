@@ -92,7 +92,7 @@ const InfoTransport = () => {
                                     '.my-box:hover &': {
                                         color: '#05e736',//before green.500
                                     },
-                                }}>Transport
+                                }}>Registers
                     </Box>
                         </Heading>
                     </Box>
