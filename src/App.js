@@ -8,7 +8,7 @@ import * as USER_HELPERS from "./utils/userToken";
 import InfoCustomers from './pages/InfoCustomers'
 import InfoServices from './pages/InfoServices'
 import InfoTransport from './pages/InfoTransport'
-import InfoSecurity from './pages/InfoSecurity'
+// import InfoSecurity from './pages/InfoSecurity'
 import Access from './pages/Access'
 //Pages
 import HomePage from "./pages/HomePage";
@@ -76,7 +76,7 @@ export default function App() {
           <Route path="/customers" element={<LayoutAdmin><InfoCustomers /></LayoutAdmin>} />
           <Route path="/InfoServices" element={<LayoutAdmin><InfoServices /></LayoutAdmin>} />
           <Route path="/InfoTransport" element={<LayoutAdmin><InfoTransport /></LayoutAdmin>} />
-          <Route path="/Security" element={<LayoutAdmin><InfoSecurity /></LayoutAdmin>} />
+          {/* <Route path="/Security" element={<LayoutAdmin><InfoSecurity /></LayoutAdmin>} /> */}
           <Route path="/Access/:id" element={<LayoutAdmin><Access /></LayoutAdmin>} />
         </Routes>
       
