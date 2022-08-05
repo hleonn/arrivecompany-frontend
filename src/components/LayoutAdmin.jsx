@@ -54,7 +54,7 @@ export default function LayoutAdmin({ children }) {
 
 const LinkItems = [
     { name: 'Customers', path: '/customers', icon: FiHome },
-    { name: 'Services', path: '/InfoServices', icon: FiTrendingUp },
+    { name: 'Critical Services', path: '/InfoServices', icon: FiTrendingUp },
     { name: 'Transport', path: '/InfoTransport', icon: FiCompass },
     { name: 'Security', path: '/Security', icon: FiStar },
     { name: 'Access', path: '/Access', icon: FiSettings },

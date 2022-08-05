@@ -177,6 +177,15 @@ const Access = ({ }) => {
                                             <Text color={'red'} fontSize='28px' fontWeight='bold'>
                                                 <p>{moment(customer.DateTime).format("HH:mm a ") || null}</p>
                                             </Text>
+                                            <Text color={'black'} fontSize='22px' fontWeight='bold'>
+                                                <p>{customer.Supply || null}</p>
+                                            </Text>
+                                            <Text color={'black'} fontSize='22px' fontWeight='bold'>
+                                                <p>{customer.Vehicles || null}</p>
+                                            </Text>
+                                            <Text color={'black'} fontSize='22px' fontWeight='bold'>
+                                                <p>{customer.Plates || null}</p>
+                                            </Text>
                                         </div>
                                         //D/M/YY
                                     ) : null}

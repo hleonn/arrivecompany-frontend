@@ -15,11 +15,18 @@ import {
     InputRightElement,
     Divider,
     Center,
-    Flex
+    Flex,
+    Tabs,
+    TabPanels,
+    TabPanel,
+    TabList,
+    Tab,
+    Image
+
 } from '@chakra-ui/react'
 import { SunIcon, TimeIcon, Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/icons'
 import QRCode from "react-qr-code";
-import { AiOutlineUser } from 'react-icons/ai'
+import { AiOutlineUser, AiFillCar } from 'react-icons/ai'
 
 
 
@@ -30,7 +37,11 @@ const InfoCustomers = () => {
     const [DateTime, setDateTime] = useState('');
     const [companyVisit, setcompanyVisit] = useState('');
     const [area, setArea] = useState('');
-
+    // NEW CHANGES WITH TABS
+    const [supply, setSupply] = useState('');
+    const [vehicle, setVehicles] = useState('');
+    const [plates, setPlates] = useState('');
+    //
     const navigate = useNavigate();
 
     const actualizarCustomer = (e) => { setCustomerName(e.target.value); };
@@ -52,6 +63,10 @@ const InfoCustomers = () => {
             DateTime: DateTime,
             CompanyVisit: companyVisit,
             Area: area,
+            // CHANGES WITH TABS
+            Supply: supply,
+            Vehicles: vehicle,
+            Plates: plates,
         };
         console.log(datosEnviar)
         var requestOptions = {
@@ -104,143 +119,317 @@ const InfoCustomers = () => {
                 </Center>
             </div>
             <Divider orientation='horizontal' />
+            {/******* 1 CHANGES WITH TABS ......PERSONAL OR SERVICES ******/}
+            {/* <div>
+                <Center height='50px' pt={10} pb={10}>
+                    <Stack
+                        w='500px' //COOL
+                        background='white'
+                        align='center'
+                        direction='row' spacing={2} align='center'
+                        borderRadius='15px'
+                        borderWidth={4}
+                        borderColor='black'
+                        p={2}
+                        className='my-box'
+                    >
+                        <Tabs defaultIndex={1}>
 
-            {/******* 1 DATA USER ******/}
+                            <TabList>
+                                <Tab>Personal or Work</Tab>
+                                <Tab>Services</Tab>
+                            </TabList>
 
-            <form onSubmit={enviarDatos}>
-                <div>
-                    <Center height='50px' pt={10} pb={10}>
-                        {/*<form onSubmit={enviarDatos}>*/}
-                        <Stack
-                            w='500px' //COOL
-                            background='white'
-                            align='center'
-                            direction='row' spacing={2} align='center'
-                            borderRadius='15px'
-                            borderWidth={4}
-                            borderColor='black'
-                            p={2}
-                            className='my-box'
-                        >
-                            <InputGroup>
-                                <InputLeftElement
-                                    pointerEvents='none'
-                                    fontSize='2em'
-                                    children={
-                                        <AiOutlineUser w={8} h={8} color='red.500' />
-                                    }
-                                />
+                            <TabPanels>
+                                <TabPanel>
+                                    <Image
+                                        boxSize='200px'
+                                        fit='cover'
+                                        src='https://resizing.flixster.com/wTgvsiM8vNLhCcCH-6ovV8n5z5U=/300x300/v1.bjsyMDkxMzI5O2o7MTgyMDQ7MTIwMDsxMjAwOzkwMA'
+                                    />
+                                </TabPanel>
+                                <TabPanel>
+                                    <Image
+                                        boxSize='200px'
+                                        fit='cover'
+                                        src='https://vignette.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png/revision/latest?cb=20170716092103'
+                                    />
+                                </TabPanel>
+                            </TabPanels>
+
+
+                        </Tabs>
+                    </Stack>
+                </Center>
+            </div> */}
+
+            {/******* 1 CHANGES WITH TABS ......PERSONAL OR SERVICES ******/}
+
+
+
+
+            {/******* 2 DATA USER ******/}
+
+            <Center pt={10} pb={10}>
+                <form onSubmit={enviarDatos}>
+
+                    <div>
+                        <Center height='50px' pt={10} pb={10}>
+                            {/*<form onSubmit={enviarDatos}>*/}
+                            <Stack
+                                w='500px' //COOL
+                                background='white'
+                                align='center'
+                                direction='row' spacing={2} align='center'
+                                borderRadius='15px'
+                                borderWidth={4}
+                                borderColor='black'
+                                p={2}
+                                className='my-box'
+                            >
+                                <InputGroup>
+                                    <InputLeftElement
+                                        pointerEvents='none'
+                                        fontSize='2em'
+                                        children={
+                                            <AiOutlineUser w={8} h={8} color='red.500' />
+                                        }
+                                    />
+                                    <Input
+                                        onChange={(e) => setCustomerName(e.target.value)}
+                                        value={customerName}
+                                        type="text" placeholder='Customer Name' fontSize='1em' pt={5} pb={5} pl={10}
+                                    />
+                                </InputGroup>
+
+                            </Stack>
+                            {/*</form>*/}
+                        </Center>
+                    </div>
+
+                    {/*******3 DATE AND TIME*******/}
+
+                    <div>
+                        <Center height='50px' pt={10} pb={10}>
+                            <Stack
+                                w='500px' //COOL
+                                background='white'
+                                align='center'
+                                direction='row' spacing={2} align='center'
+                                borderRadius='15px'
+                                borderWidth={4}
+                                borderColor='black'
+                                p={2}
+                                className='my-box'
+                            >
                                 <Input
-                                    onChange={(e) => setCustomerName(e.target.value)}
-                                    value={customerName}
-                                    type="text" placeholder='Customer Name' fontSize='1em' pt={5} pb={5} pl={10}
+                                    onChange={(e) => setDateTime(e.target.value)}
+                                    value={DateTime}
+                                    placeholder="Choose Date & Time"
+                                    size="md"
+                                    type="datetime-local" //Number
                                 />
-                            </InputGroup>
+                            </Stack>
+                        </Center>
+                    </div>
+                    <Divider orientation='horizontal' p={0.5} />
 
-                        </Stack>
-                        {/*</form>*/}
-                    </Center>
-                </div>
+                    {/*******4 DropDown/Select *******/}
 
-                {/*******2 DATE AND TIME*******/}
+                    <div>
 
-                <div>
-                    <Center height='50px' pt={10} pb={10}>
-                        <Stack
-                            w='500px' //COOL
-                            background='white'
-                            align='center'
-                            direction='row' spacing={2} align='center'
-                            borderRadius='15px'
-                            borderWidth={4}
-                            borderColor='black'
-                            p={2}
-                            className='my-box'
-                        >
-                            <Input
-                                onChange={(e) => setDateTime(e.target.value)}
-                                value={DateTime}
-                                placeholder="Choose Date & Time"
-                                size="md"
-                                type="datetime-local" //Number
-                            />
-                        </Stack>
-                    </Center>
-                </div>
-                <Divider orientation='horizontal' p={0.5} />
+                        <Center height='50px' pt={10} pb={10}>
+                            <Stack
+                                w='500px' //COOL
+                                background='white'
+                                align='center'
+                                direction='row' spacing={2} align='center'
+                                borderRadius='15px'
+                                borderWidth={4}
+                                borderColor='black'
+                                p={2}
+                                className='my-box'
+                            >
+                                <Select
+                                    onChange={(e) => setcompanyVisit(e.target.value)}
+                                    value={companyVisit}
+                                    type="text"
+                                    placeholder='Company to Visit'>
+                                    <option value='Umbrella'>Umbrella</option>
+                                    <option value='Monsanto'>Monsanto </option>
+                                    <option value='Bayer'>Bayer </option>
+                                    <option value='Illumina'>Illumina</option>
+                                    <option value='Astra Zeneca'>Astra Zeneca</option>
+                                    <option value='Theranos'>Theranos</option>
 
-                {/*******3 DropDown/Select *******/}
+                                </Select>
+                                <Divider orientation='vertical' pl={1} pr={1} />
+                                {/*<Divider orientation='horizontal' p={5}/>*/}
 
-                <div>
+                                <Select
+                                    onChange={(e) => setArea(e.target.value)}
+                                    value={area}
+                                    type="text"
+                                    placeholder='Area to Visit'>
+                                    <option value='Informatics'>Informatics</option>
+                                    <option value='Genoma Design'>Genoma Design</option>
+                                    <option value='Clonation'>Clonation</option>
+                                    <option value='Transgenic Test'>Transgenic Test</option>
+                                    <option value='Marketing'>Marketing</option>
+                                    <option value='Planning'>Planning</option>
+                                    <option value='Production'>Production</option>
+                                    <option value='Robotic Labs'>Robotic Labs</option>
+                                    <option value='Human Capital'>Human Capital</option>
+                                    <option value='Sales'>Sales</option>
+                                </Select>
+                            </Stack>
+                        </Center>
+                    </div>
 
-                    <Center height='50px' pt={10} pb={10}>
-                        <Stack
-                            w='500px' //COOL
-                            background='white'
-                            align='center'
-                            direction='row' spacing={2} align='center'
-                            borderRadius='15px'
-                            borderWidth={4}
-                            borderColor='black'
-                            p={2}
-                            className='my-box'
-                        >
-                            <Select
-                                onChange={(e) => setcompanyVisit(e.target.value)}
-                                value={companyVisit}
-                                type="text"
-                                placeholder='Company to Visit'>
-                                <option value='Umbrella'>Umbrella</option>
-                                <option value='Monsanto'>Monsanto </option>
-                                <option value='Bayer'>Bayer </option>
-                                <option value='Illumina'>Illumina</option>
-                                <option value='Astra Zeneca'>Astra Zeneca</option>
-                                <option value='Theranos'>Theranos</option>
+                    <Tabs defaultIndex={1}>
+                        <TabList>
+                            <Tab>Personal or Work</Tab>
+                            <Tab>Services</Tab>
+                        </TabList>
 
-                            </Select>
-                            <Divider orientation='vertical' pl={1} pr={1} />
-                            {/*<Divider orientation='horizontal' p={5}/>*/}
+                        <TabPanels>
+                            <TabPanel>
+                                {/*  */}
 
-                            <Select
-                                onChange={(e) => setArea(e.target.value)}
-                                value={area}
-                                type="text"
-                                placeholder='Area to Visit'>
-                                <option value='Informatics'>Informatics</option>
-                                <option value='Genoma Design'>Genoma Design</option>
-                                <option value='Clonation'>Clonation</option>
-                                <option value='Transgenic Test'>Transgenic Test</option>
-                                <option value='Marketing'>Marketing</option>
-                                <option value='Planning'>Planning</option>
-                                <option value='Production'>Production</option>
-                                <option value='Robotic Labs'>Robotic Labs</option>
-                                <option value='Human Capital'>Human Capital</option>
-                                <option value='Sales'>Sales</option>
-                            </Select>
-                        </Stack>
-                    </Center>
-                </div>
-                <Divider orientation='horizontal' p={5} />
+                            </TabPanel>
+                            <TabPanel>
+                                <div>
+                                    <Center height='50px' pt={10} pb={10}>
+                                        <Stack
+                                            w='500px' //COOL
+                                            background='white'
+                                            align='center'
+                                            direction='row' spacing={2} align='center'
+                                            borderRadius='15px'
+                                            borderWidth={4}
+                                            borderColor='black'
+                                            p={2}
+                                            className='my-box'
+                                        >
+                                            <Select
+                                                onChange={(e) => setSupply(e.target.value)}
+                                                value={supply}
+                                                type="text"
+                                                placeholder='Choose supplier'>
+                                                <option value='Uber Eats'>Uber Eats</option>
+                                                <option value='Dominos'>Domino's</option>
+                                                <option value='Hello Fresh'>Hello Fresh</option>
+                                                <option value='Pizza hut'>Pizza hut</option>git add
+                    
+                        </Select>
 
-                {/*4 Button variants */}
-                <div>
-                    <Center height='50px' pt={10} pb={10}>
-                        <Stack direction='row' spacing={4} align='center'>
+                                            <Divider orientation='vertical' pl={1} pr={1} />
 
-                            <Button rounded={'full'} colorScheme='teal' variant='solid' onClick={toggleSave}>
-                                Save 👍
+                                            <Select
+                                                onChange={(e) => setArea(e.target.value)}
+                                                value={area}
+                                                type="text"
+                                                placeholder='Area to Visit'>
+                                                <option value='Informatics'>Informatics</option>
+                                                <option value='Genoma Design'>Genoma Design</option>
+                                                <option value='Clonation'>Clonation</option>
+                                                <option value='Transgenic Test'>Transgenic Test</option>
+                                                <option value='Marketing'>Marketing</option>
+                                                <option value='Planning'>Planning</option>
+                                                <option value='Production'>Production</option>
+                                                <option value='Robotic Labs '>Robotic Labs </option>
+                                                <option value='Human Capital'>Human Capital</option>
+                                                <option value='Sales'>Sales</option>
+                                            </Select>
+                                        </Stack>
+                                    </Center>
+                                </div>
+                                <Divider orientation='vertical' pt={1} pb={1} pl={1} pr={1} />
+                                {/*5 Data Users */}
+                                <div>
+                                    <Center height='50px' pt={10} pb={10}>
+                                        <Stack
+                                            w='500px' //COOL
+                                            background='white'
+                                            align='center'
+                                            direction='row' spacing={2} align='center'
+                                            borderRadius='15px'
+                                            borderWidth={4}
+                                            borderColor='black'
+                                            p={2}
+                                            className='my-box'
+                                        >
+                                            <Select
+                                                onChange={(e) => setVehicles(e.target.value)}
+                                                value={vehicle}
+                                                type="text"
+                                                placeholder='Vehicle Type'>
+                                                <option value='Vehicle'>Vehicle</option>
+                                                <option value='Truck'>Truck</option>
+                                                <option value='Van'>Van</option>
+                                                <option value='Motorcycle'>Motorcycle</option>
+                                                <option value='Scooter'>Scooter</option>
+                                            </Select>
+
+                                            <Divider orientation='vertical' pl={1} pr={1} />
+
+                                            <form>
+
+                                                <Stack m={[1, 1]} >
+
+                                                    <InputGroup>
+                                                        <InputLeftElement
+                                                            pointerEvents='none'
+                                                            fontSize='1em'
+                                                            children={<AiFillCar w={8} h={8} color='black.500'
+                                                            />}
+
+                                                        />
+                                                        <Input
+                                                            onChange={(e) => setPlates(e.target.value)}
+                                                            value={plates}
+                                                            type='tel'
+                                                            placeholder=' Plates'
+                                                            fontSize='1em'
+                                                            pt={5}
+                                                            pb={5}
+                                                            pl={10} />
+
+                                                    </InputGroup>
+                                                </Stack>
+                                            </form>
+                                        </Stack>
+                                    </Center>
+                                </div>
+                            </TabPanel>
+                        </TabPanels>
+
+
+                    </Tabs>
+
+
+                    <Divider orientation='horizontal' p={5} />
+
+                    {/*5 Button variants */}
+                    <div>
+                        <Center height='50px' pt={10} pb={10}>
+                            <Stack direction='row' spacing={4} align='center'>
+
+                                <Button rounded={'full'} colorScheme='teal' variant='solid' onClick={toggleSave}>
+                                    Save 👍
                 </Button>
 
-                            <Divider orientation='vertical' />
-                            <Button rounded={'full'} colorScheme='teal' variant='outline' onClick={toggleCancel}>
-                                Cancel 👎
+                                <Divider orientation='vertical' />
+                                <Button rounded={'full'} colorScheme='teal' variant='outline' onClick={toggleCancel}>
+                                    Cancel 👎
                 </Button>
 
-                        </Stack>
-                    </Center>
-                </div>
+                            </Stack>
+                        </Center>
+                    </div>
 
-            </form>
+                </form>
+            </Center>
         </>
     );
 }

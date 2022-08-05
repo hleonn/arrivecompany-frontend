@@ -53,7 +53,7 @@ const InfoServices = () => {
                         '.my-box:hover &': {
                         color: '#05e736',//before green.500
                         },
-                        }}>Services
+                        }}>Critical Services
                     </Box>
                         </Heading>
                     </Box>
@@ -133,26 +133,26 @@ const InfoServices = () => {
                         className='my-box'
                         >
                     <Select placeholder='Choose supplier'>
-                        <option value='Uber Eats'>Uber Eats</option>
-                        <option value='Dominos'>Domino's</option>
-                        <option value='Hello Fresh'>Hello Fresh</option>
-                        <option value='Pizza Hut'>Pizza Hut</option>
+                        <option value='Electricity'>Electricity</option>
+                        <option value='Gas'>Gas</option>
+                        <option value='Criogenic'>Criogenic</option>
+                        <option value='Vigilancy'>Vigilancy</option>
 
                     </Select>
 
                     <Divider orientation='vertical' pl={2} pr={2} />
 
                     <Select placeholder='Area to Visit'>
-                        <option value='Computing Services'>Computing Services</option>
-                        <option value='Design'>Design</option>
-                        <option value='Exports'>Exports</option>
-                        <option value='Maintenance'>Maintenance</option>
-                        <option value='Marketing'>Marketing</option>
-                        <option value='Planning'>Planning</option>
-                        <option value='option7'>Production</option>
-                        <option value='option8'>Financial Services</option>
-                        <option value='option9'>Human Resources</option>
-                        <option value='option10'>Sales</option>
+                    <option value='Informatics'>Informatics</option>
+                                    <option value='Genoma Design'>Genoma Design</option>
+                                    <option value='Clonation'>Clonation</option>
+                                    <option value='Transgenic Test'>Transgenic Test</option>
+                                    <option value='Marketing'>Marketing</option>
+                                    <option value='Planning'>Planning</option>
+                                    <option value='Production'>Production</option>
+                                    <option value='Robotic Labs'>Robotic Labs</option>
+                                    <option value='Human Capital'>Human Capital</option>
+                                    <option value='Sales'>Sales</option>
                     </Select>
                 </Stack>
                 </Center>
